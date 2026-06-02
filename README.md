@@ -78,8 +78,37 @@ This project implements a multi-agent system that automates the entire reporting
 ---
 
 ## Demo
-👉 (Add your demo video link here)
+👉 https://youtu.be/i_ytmJY4T3w
 
 ---
 
-## Repository Structure
+## Quick Setup Summary 
+
+Prepare environment 
+
+Ensure access to Microsoft 365 (Power Automate, SharePoint, Teams, Copilot Studio). 
+
+Connect to the SharePoint site containing the Incoming Data folder and approval list. 
+
+Upload sample data 
+
+Place a CSV file in the SharePoint folder using the naming format: 
+YYYYMMDD_short_pos.csv (e.g., 20260523_short_pos.csv). 
+
+Run the Data Agent (Power Automate flow) 
+
+Trigger the flow manually or wait for the scheduled run (e.g., Monday 9 AM). 
+
+The flow checks for the latest Friday file and validates existence. 
+
+Trigger downstream agents 
+
+If file exists → Calculation Agent processes thresholds and generates results. 
+
+Reporting Agent then creates output and sends notification via Teams. 
+
+Review & approve 
+
+Approvers receive a Teams message with a link to the SharePoint approval item. 
+
+Update approval status (Approve/Reject) directly in the list. 
